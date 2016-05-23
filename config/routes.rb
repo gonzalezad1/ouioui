@@ -9,5 +9,6 @@ Rails.application.routes.draw do
               :edit => "profile"}
 
   resources :users, only: [:show]
+  resources :products
 
 end
