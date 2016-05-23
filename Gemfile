@@ -11,8 +11,14 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-sass'
-
+gem 'figaro'
 gem 'devise'
+gem 'omniauth-facebook'
+
+# Notifications
+gem 'toastr-rails'
+
+gem 'paperclip'
 
 group :development, :test do
   gem 'byebug'
