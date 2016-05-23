@@ -1,32 +1,49 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update]
-  before_action :authenticate_admin!, except: [:show]
+  before_action :authenticate_user!, except: [:show]
 
   def index
-    @products = current_admin.products
+    @products = current_user.products
   end
 
   def new
-    @product = current_admin.products.build
+    @product = current_user.products.build
   end
 
   def show
-
+    @product_photos = @product.product_photos
   end
 
   def create
-    @product = current_admin.products.build(product_params)
+    @product = current_user.products.build(product_params)
     if @product.save
-      redirect_to @product, notice: "Saved..."
+      if params[:images]
+        params[:images].each do |img|
+          @product.product_photos.create(image: img)
+        end
+      end
+      @product_photos = @product.product_photos
+      redirect_to edit_product_path(@product), notice: "Saved..."
     else
+      flash[:alert] = "Please provide all information required."
       render :new
     end
   end
 
+  def edit
+    @product_photos = @product.product_photos
+  end
+
   def update
     if @product.update(product_params)
-      redirect_to @product, notice: "Updated..."
+      if params[:images]
+        params[:images].each do |img|
+          @product.product_photos.create(image: img)
+        end
+      end
+      redirect_to edit_product_path(@product), notice: "Updated..."
     else
+      flash[:alert] = "Please provide all information required."
       render :edit
     end
   end
@@ -37,7 +54,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:product_type, :category, :size, :product_name, :description, :stock, :price, :code_id, :active)
+    params.require(:product).permit(:product_type, :category, :size, :product_name, :description, :stock, :price)
   end
 
 end
