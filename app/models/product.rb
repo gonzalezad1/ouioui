@@ -9,4 +9,6 @@ class Product < ActiveRecord::Base
   validates_presence_of :stock
   validates_presence_of :code_id
 
+  has_many :product_photos
+
 end
