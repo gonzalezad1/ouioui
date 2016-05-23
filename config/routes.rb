@@ -8,8 +8,7 @@ Rails.application.routes.draw do
               :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" },
               :path_names => {:sign_in => "login",
               :sign_out => "logout",
-              :edit => "profile"},
-              :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+              :edit => "profile"}
 
   resources :users, only: [:show]
   resources :products
