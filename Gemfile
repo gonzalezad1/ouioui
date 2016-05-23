@@ -18,6 +18,8 @@ gem 'omniauth-facebook'
 # Notifications
 gem 'toastr-rails'
 
+gem 'paperclip'
+
 group :development, :test do
   gem 'byebug'
 end
