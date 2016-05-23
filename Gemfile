@@ -18,7 +18,12 @@ gem 'omniauth-facebook'
 # Notifications
 gem 'toastr-rails'
 
+<<<<<<< HEAD
 gem 'paperclip'
+=======
+gem 'figaro'
+gem 'omniauth-facebook'
+>>>>>>> omniauth-facebook
 
 group :development, :test do
   gem 'byebug'
