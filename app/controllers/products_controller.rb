@@ -1,13 +1,13 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update]
-  before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_admin!, except: [:show]
 
   def index
-    @products = current_user.products
+    @products = current_admin.products
   end
 
   def new
-    @product = current_user.products.build
+    @product = current_admin.products.build
   end
 
   def show
@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = current_user.products.build(product_params)
+    @product = current_admin.products.build(product_params)
     if @product.save
       redirect_to @product, notice: "Saved..."
     else
