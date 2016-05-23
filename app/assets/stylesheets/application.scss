@@ -1,13 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-<<<<<<< HEAD
-@import "toastr";
-
-=======
 @import "font-awesome.min";
 @import "home";
 @import "toastr";
->>>>>>> origin/master
+
+@import "toastr";
+
+@import "font-awesome.min";
+@import "home";
+@import "toastr";
+
 .avatar-small {
   width: 28px;
 }
