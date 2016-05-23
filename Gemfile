@@ -15,6 +15,9 @@ gem 'figaro'
 gem 'devise'
 gem 'omniauth-facebook'
 
+# Notifications
+gem 'toastr-rails'
+
 group :development, :test do
   gem 'byebug'
 end
