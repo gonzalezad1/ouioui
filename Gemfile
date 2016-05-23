@@ -14,6 +14,9 @@ gem 'bootstrap-sass'
 
 gem 'devise'
 
+# Notifications
+gem 'toastr-rails'
+
 group :development, :test do
   gem 'byebug'
 end
