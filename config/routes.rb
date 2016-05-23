@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :admins
   root 'pages#home'
 
   devise_for  :users,
@@ -9,5 +10,6 @@ Rails.application.routes.draw do
               :edit => "profile"}
 
   resources :users, only: [:show]
+  resources :products
 
 end
