@@ -1,0 +1,53 @@
+.log_in_div {
+    position: center;
+    width: 100%;
+    margin-left: 30%;
+    margin-top: 10%;
+}
+
+h2.log_in {
+    color: rgba(125, 123, 121, 0.74);
+}
+
+input#user_email {
+    outline: none;
+    background: transparent;
+    border-style: solid;
+    border-color: rgba(240, 243, 240, 0.27);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 100;
+    width: 250px;
+}
+
+input#user_password {
+    background: transparent;
+    border-style: solid;
+    border-color: rgba(240, 243, 240, 0.27);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 100;
+    width: 250px;
+}
+
+input[type="submit"] {
+    color: #9A432F;
+    background: transparent;
+    border: solid;
+    border-bottom-width: medium;
+    border-left-width: medium;
+    border-right-width: thin;
+    border-top-width: thin;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+    color: rgba(10, 12, 10, 0.99);
+    background-color: rgba(64, 60, 59, 0.67);
+    border-color: #000000;
+}
+
+span.remember_me {
+    color: #666463;
+}
