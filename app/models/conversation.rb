@@ -7,7 +7,7 @@ class Conversation < ActiveRecord::Base
   validates_uniqueness_of :sender_id, scope: :recipient_id
 
   scope :involving, -> (user) do
-    where("conversations.sender_id = ? OR conversations.recipeitn_id = ?",
+    where("conversations.sender_id = ? OR conversations.recipient_id = ?",
       user.id, user.id)
   end
 
