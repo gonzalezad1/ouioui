@@ -7,11 +7,10 @@ class ProductsController < ApplicationController
   end
 
   def new
-    if current_user
-      flash[:alert] = "You do not have the permission to do that."
-      redirect_to root_path
-    else
+    if current_admin
       @product = current_admin.products.build
+    else
+      redirect_to root_path, alert: "You do not have the permission to do that."
     end
   end
 
@@ -20,23 +19,18 @@ class ProductsController < ApplicationController
   end
 
   def create
-    if current_user?
-      flash[:alert] = "You do not have the permission to do that."
-      redirect_to root_path
-    else
-      @product = current_admin.products.build(product_params)
-      if @product.save
-        if params[:images]
-          params[:images].each do |img|
-            @product.product_photos.create(image: img)
-          end
+    @product = current_admin.products.build(product_params)
+    if @product.save
+      if params[:images]
+        params[:images].each do |img|
+          @product.product_photos.create(image: img)
         end
-        @product_photos = @product.product_photos
-        redirect_to edit_product_path(@product), notice: "Saved..."
-      else
-        flash[:alert] = "Please provide all information required."
-        render :new
       end
+      @product_photos = @product.product_photos
+      redirect_to edit_product_path(@product), notice: "Saved..."
+    else
+      flash[:alert] = "Please provide all information required."
+      render :new
     end
   end
 
