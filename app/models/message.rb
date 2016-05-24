@@ -5,6 +5,10 @@ class Message < ActiveRecord::Base
   validates_presence_of :content, :conversation_id, :user_id
 
   def message_time
-    created_at.strftime("%v")
+    created_at.strftime("%r")
+  end
+
+  def zone
+    period.zone_identifier.to_s
   end
 end
