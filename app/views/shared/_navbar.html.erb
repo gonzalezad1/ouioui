@@ -1,7 +1,7 @@
 <!-- Menu -->
 <nav class="menu" id="theMenu">
   <div class="menu-wrap">
-    <h1 class="logo"><a href="/">Project T</a></h1>
+    <h1 class="logo"><a href="/">TRAIL</a></h1>
     <i class="icon-remove menu-close"></i>
     <!-- <a href="#home">FIND</a> -->
     <% if(!user_signed_in?) %>
@@ -13,8 +13,8 @@
     <%= link_to "Edit Profile", edit_user_registration_path %>
     <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
     <% end %>
-    <a href="#portfolio">Store</a>
-    <a href="#about">About Us</a>
+    <a href="/products">Store</a>
+    <a href="/about_us">About Us</a>
     <a href="#contact">Contact</a>
     <a href="#contact"></a>
     <a href="#"><i class="icon-facebook"></i></a>
