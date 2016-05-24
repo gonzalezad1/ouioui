@@ -2,13 +2,12 @@
 @import "bootstrap";
 @import "font-awesome.min";
 @import "home";
-<<<<<<< HEAD
+
 @import "log_in";
 @import "sign_up";
 
-=======
 @import "toastr";
->>>>>>> master
+
 
 .avatar-small {
   width: 28px;
@@ -21,4 +20,15 @@
 }
 .avatar-full {
   width: 100%
+}
+
+.bkpic{
+  position: absolute;
+  background-image: url('photo2.jpg');
+  z-index:-5;
+  left:0%;
+  background-size:cover;
+  min-width: 100%;
+  min-height: 100%;
+
 }
