@@ -1,0 +1,75 @@
+.user-avatar-full {
+    border: azure;
+    border: solid;
+    border-width: thick;
+    border-radius: 5000px;
+}
+
+h2.profile_user_fullname {
+    color: #F9F9F9;
+}
+
+p.profile_user_description {
+    color: #F9F9F9;
+    font-size: medium;
+}
+
+.user_profile_icon {
+    font-size: -webkit-xxx-large;
+    color: slategray;
+}
+
+.fa-facebook:hover {
+    color: #16629E;
+}
+
+.fa-github:hover{
+  color: black;
+}
+
+.fa-google-plus:hover{
+  color: #dd4b39
+}
+
+.fa-twitter:hover{
+  color:  #3EB5FB;
+}
+
+.fa-twitch:hover{
+  color: #8730D6;
+}
+
+.fa-rebel:hover{
+  color: black;
+}
+
+.fa-snapchat-ghost:hover{
+  color:#EAE400;
+}
+
+.fa-youtube:hover{
+  color: #bb0000
+}
+.fa-tripadvisor:hover{
+  color:#2A790A
+}
+.fa-linkedin:hover{
+  color:#007bb5
+}
+.fa-instagram:hover{
+  animation: 3s multicolor;
+}
+@keyframes multicolor {
+    0% {
+        color: #FFD501;
+    }
+    33% {
+        color: #FF9800;
+    }
+    66% {
+        color: #FF0000;
+    }
+    100% {
+        color: #B383FF;
+    }
+}

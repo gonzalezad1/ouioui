@@ -1,20 +1,46 @@
 <div class="row">
-   <div class="col-md-3">
+
+  <div class="col-md-4">
+  </div>
+
+   <div class="col-md-4">
+
+     <br>
+     <br>
+     <br>
+     <br>
      <div class="center">
-       <%= image_tag avatar_url(@user), class: "avatar-full" %>
+       <%= image_tag avatar_url(@user), class: "user-avatar-full" %>
      </div>
-     <div class="panel panel-default">
+     <br>
+     <br>
+     <br>
+     <div class="user_profile_icon">
+       <i class="fa fa-facebook" aria-hidden="true"></i>
+       <i class="fa fa-github" aria-hidden="true"></i>
+       <i class="fa fa-google-plus" aria-hidden="true"></i>
+       <i class="fa fa-twitter" aria-hidden="true"></i>
+       <i class="fa fa-twitch" aria-hidden="true"></i>
+       <i class="fa fa-rebel" aria-hidden="true"></i>
+       <i class="fa fa-snapchat-ghost" aria-hidden="true"></i>
+       <i class="fa fa-youtube" aria-hidden="true"></i>
+       <i class="fa fa-tripadvisor" aria-hidden="true"></i>
+       <i class="fa fa-linkedin" aria-hidden="true"></i>
+       <i class="fa fa-instagram" aria-hidden="true"></i>
+     </div>
+     <!-- <div class="panel panel-default">
        <div class="panel-heading">Verification</div>
        <div class="panel-body">
          Email Address<br>
          Phone Number
        </div>
      </div>
-   </div>
+   </div> -->
 
-   <div class="col-md-9">
-     <h2><%= @user.fullname %></h2>
-
+   <div class="col-md-4">
+     <br>
+     <h2 class="profile_user_fullname">This is <%= @user.fullname %></h2>
+     <p class="profile_user_description">He is a billionaire, playboy, genius, philantropist</p>
      <div class="description row-space-3">
        <%= @user.description %>
      </div>
