@@ -1,4 +1,26 @@
+.profile_background {
+    position: absolute;
+    background-color: #1E3E2B;
+    min-width: 100%;
+    left: 0;
+    // animation: 1s multicolor;
+    // animation-iteration-count: infinite;
+     -webkit-animation: pulse 40s infinite alternate;
+}
+@-webkit-keyframes pulse {
+      0% {background-color: #45CEEF;}
+     25% {background-color: #FFF5A5;}
+     50% {background-color: #FFD4DA;}
+     75% {background-color: #99D2E4;}
+     100% {background-color: #D8CAB4;}
+}
+
+.center {
+    align-content: center;
+    text-align: center;
+}
 .user-avatar-full {
+    width: 65%;
     border: azure;
     border: solid;
     border-width: thick;
@@ -14,11 +36,23 @@ p.profile_user_description {
     font-size: medium;
 }
 
+p.profile_icons_title {
+  color: aquamarine;
+  font-family: 'Special Elite', cursive;
+}
+
+p.profile_user_code {
+  font-family: 'Shadows Into Light', cursive;
+  color:white;
+}
+
 .user_profile_icon {
     font-size: -webkit-xxx-large;
     color: slategray;
+    animation-iteration-count: infinite;
 }
 
+// icons from awesomefonts
 .fa-facebook:hover {
     color: #16629E;
 }
@@ -57,19 +91,90 @@ p.profile_user_description {
   color:#007bb5
 }
 .fa-instagram:hover{
-  animation: 3s multicolor;
+  animation: 1s multicolor;
+  animation-iteration-count: infinite;
 }
 @keyframes multicolor {
     0% {
-        color: #FFD501;
+        color:  #405de6;
     }
-    33% {
-        color: #FF9800;
+    10% {
+       color: #5851db;
     }
-    66% {
-        color: #FF0000;
+    20% {
+        color: #833ab4;
     }
-    100% {
-        color: #B383FF;
+    30% {
+        color: #c13584;
     }
+    40% {
+        color: #e1306c;
+    }
+    50% {
+        color: #fd1d1d;
+    }
+    60% {
+        color: #f56040;
+    }
+    70% {
+      color: #f77737;
+    }
+    80% {
+      color: #fcaf45;
+    }
+    90% {
+      color: #ffdc80;
+    }
+}
+
+@media (max-width: 768px) {
+  .user_profile_icon {
+    margin-left: 10%;
+  }
+  p.profile_icons_title {
+    margin-left: 10%;
+  }
+  h2.profile_user_fullname {
+      margin-left: 10%;
+  }
+  p.profile_user_description {
+      margin-left: 10%;
+  }
+  p.profile_user_code {
+      margin-left:10%;
+  }
+}
+
+
+@media (min-width: 769px) {
+  .user_profile_icon {
+    margin-left: 5%;
+  }
+  p.profile_icons_title {
+    margin-left: 5%;
+  }
+  h2.profile_user_fullname {
+      margin-left: 5%;
+  }
+  p.profile_user_description {
+      margin-left: 5%;
+  }
+  p.profile_user_code {
+      margin-left:  5%;
+  }
+}
+
+@media (min-width: 600px){
+.col-md-4 {
+    width: 33.33333333333333%;
+}
+}
+@media (min-width: 600px){
+ .col-md-4{
+    float: left;
+  }
+}
+
+strong {
+    background-color: black;
 }

@@ -1,3 +1,5 @@
+
+<div class="profile_background">
 <div class="row">
 
   <div class="col-md-4">
@@ -12,10 +14,15 @@
      <div class="center">
        <%= image_tag avatar_url(@user), class: "user-avatar-full" %>
      </div>
+
+     <h2 class="profile_user_fullname"><%= @user.fullname %></h2>
+     <p class="profile_user_description">Billionaire, playboy, genius, philantropist</p>
      <br>
+     <p class="profile_user_code">123mdlf</p>
      <br>
-     <br>
+     <p class="profile_icons_title"><strong>Trails:</strong></p>
      <div class="user_profile_icon">
+
        <i class="fa fa-facebook" aria-hidden="true"></i>
        <i class="fa fa-github" aria-hidden="true"></i>
        <i class="fa fa-google-plus" aria-hidden="true"></i>
@@ -39,8 +46,7 @@
 
    <div class="col-md-4">
      <br>
-     <h2 class="profile_user_fullname">This is <%= @user.fullname %></h2>
-     <p class="profile_user_description">He is a billionaire, playboy, genius, philantropist</p>
+
      <div class="description row-space-3">
        <%= @user.description %>
      </div>
@@ -49,4 +55,5 @@
        <%= @user.interest %>
      </div>
    </div>
+ </div>
  </div>
