@@ -7,8 +7,4 @@ class Message < ActiveRecord::Base
   def message_time
     created_at.strftime("%r")
   end
-
-  def zone
-    period.zone_identifier.to_s
-  end
 end
