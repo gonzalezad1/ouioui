@@ -19,8 +19,13 @@ gem 'omniauth-facebook'
 
 # Notifications
 gem 'toastr-rails'
+gem 'jquery-turbolinks'
 
 gem 'paperclip'
+
+# Messaging
+gem 'private_pub'
+gem 'thin'
 
 group :development, :test do
   gem 'byebug'
