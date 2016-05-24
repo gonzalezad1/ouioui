@@ -1,13 +1,18 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update]
-  before_action :authenticate_user!, except: [:show]
+
 
   def index
-    @products = current_user.products
+    @products = current_admin.products
   end
 
   def new
-    @product = current_user.products.build
+    if current_user
+      flash[:alert] = "You do not have the permission to do that."
+      redirect_to root_path
+    else
+      @product = current_admin.products.build
+    end
   end
 
   def show
@@ -15,18 +20,23 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = current_user.products.build(product_params)
-    if @product.save
-      if params[:images]
-        params[:images].each do |img|
-          @product.product_photos.create(image: img)
-        end
-      end
-      @product_photos = @product.product_photos
-      redirect_to edit_product_path(@product), notice: "Saved..."
+    if current_user?
+      flash[:alert] = "You do not have the permission to do that."
+      redirect_to root_path
     else
-      flash[:alert] = "Please provide all information required."
-      render :new
+      @product = current_admin.products.build(product_params)
+      if @product.save
+        if params[:images]
+          params[:images].each do |img|
+            @product.product_photos.create(image: img)
+          end
+        end
+        @product_photos = @product.product_photos
+        redirect_to edit_product_path(@product), notice: "Saved..."
+      else
+        flash[:alert] = "Please provide all information required."
+        render :new
+      end
     end
   end
 

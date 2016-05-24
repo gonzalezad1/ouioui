@@ -1,6 +1,8 @@
 <!-- <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p> -->
-
+<% if current_admin %>
+  <%= render 'admin/home' %>
+<% else %>
 
     <br>
     <br>
@@ -52,3 +54,5 @@
 	<!-- <script src="/assets/javascript/main.js"></script> -->
   <!-- <script type="text/javascript">sc_project=3231500; sc_invisible=1; sc_partition=35; sc_security="2ff72137";</script>
   <script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script> -->
+
+  <% end %>
