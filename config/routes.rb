@@ -14,5 +14,8 @@ Rails.application.routes.draw do
   resources :products
   resources :product_photos
 
+  recources :conversations, only: [:index, :create] do
+    resources :messages, only: [:index, :create]
+  end
 
 end
