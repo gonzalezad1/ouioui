@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523105103) do
+ActiveRecord::Schema.define(version: 20160524041200) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -37,6 +37,28 @@ ActiveRecord::Schema.define(version: 20160523105103) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "galleries", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "cover"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "token"
+  end
+
+  create_table "pictures", force: :cascade do |t|
+    t.string   "description"
+    t.string   "image"
+    t.integer  "gallery_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "gallery_token"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "product_photos", force: :cascade do |t|
@@ -88,6 +110,10 @@ ActiveRecord::Schema.define(version: 20160523105103) do
     t.string   "phone_number"
     t.text     "description"
     t.text     "interest"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
