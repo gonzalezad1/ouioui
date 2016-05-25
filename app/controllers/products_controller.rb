@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @products = Product.all
     @product_photos = @product.product_photos
   end
 

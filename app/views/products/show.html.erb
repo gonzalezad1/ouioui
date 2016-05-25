@@ -1,4 +1,83 @@
-this is the show for product
-<div class="shopping_cart_icon">
-<a href="#"><i class="fa fa-shopping-cart"></i></a>
+
+  <div class="row" >
+    <div class="text-center" style="padding: 100px">
+      <h2>Just for the weekend</h2>
+      <p>Discover new, inspiring people to trail.</p>
+    </div>
+  </div>
+
+<div class="individual-product" style="background-color: white; border-radius: 10px">
+  <div class="row" style="padding: 10%">
+    <div class="col-md-6">
+      <h2><strong><%= @product.product_name %></strong></h4>
+      <p style="color:green; font-size:22px">$<%= @product.price %></p>
+      <tbody>
+        <tr>
+          <td class="label"><label for="style" style="font-size: 20px">Style</label></td>
+          <td class="value">
+            <select id="style" style="font-size: 20px">
+              <option value selected="selected">Choose an option</option>
+              <option value="Unisex">Unisex</option>
+              <option value="Ladies">Ladies</option>
+            </select>
+          </td>
+        </tr><br>
+        <tr>
+          <td class="label"><label for="size" style="font-size: 20px">Size</label></td>
+          <td class="value">
+            <select id="size" style="font-size: 20px">
+              <option value selected="selected">Choose an option</option>
+              <option value="XS">XS</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+      <br>
+      <br>
+      <div class="quantity">
+        <input type="number" step="1" min="1" max="46" name="quantity" value="1" title="Qty" class="input-text qty text" size="4">
+        <button type="submit" class="single_add_to_cart_button button alt" disabled="disabled" title="Select product options before adding this product to your cart.">Add to cart</button>
+      </div>
+
+    </div>
+    <div class="col-md-6">
+      <%= image_tag @product_photos[0].image.url(), class: "img-responsive" if @product_photos.length > 0 %>
+    </div>
+
+
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#">Description</a></li>
+      <li><a href="#">Additional Information</a></li>
+    </ul>
+    <h3><strong>Product Description</strong></h3>
+    <div class="description" style="padding: 20px">
+      <h4><%= @product.description %></h4><br>
+
+      <a href="#">Unisex Size Chart</a><br><br>
+      <a href="#">Ladies Size Chart</a>
+    </div>
+
+    <h3><strong>Related Products</strong></h3>
+    <% @products.each do |product| %>
+      <div class="col-md-4 col-sm-6" style="padding:30px">
+        <div class="panel panel-default">
+          <div class="panel-heading preview">
+            <%= image_tag product.product_photos[0].image.url(:medium), class: "img-responsive" if product.product_photos.length >0 %>
+          </div>
+          <div class="panel-body">
+            <%= link_to product.product_name, product %>
+            <div class="pull-right">$<%= product.price %></div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+
+  </div>
 </div>
