@@ -10,15 +10,18 @@ Rails.application.routes.draw do
               :sign_out => "logout",
               :edit => "profile"}
 
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    resources :galleries 
+    resources :pictures
+  end
+  
   resources :products
   resources :product_photos
 
+  patch "/users/:user_id" => "users#update"
 
   get "/about_us" => "pages#about_us"
 
-  resources :galleries
-  resources :pictures
   resources :conversations, only: [:index, :create] do
     resources :messages, only: [:index, :create]
   end

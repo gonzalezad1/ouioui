@@ -14,9 +14,9 @@
   </p>
 
   <div class="form-actions">
-    <%= link_to 'Back', galleries_path, :class => 'btn btn-mini'  %>
-    <%= link_to 'Edit gallery', edit_gallery_path(@gallery), :class => 'btn btn-mini' %>
-    <%= link_to 'Delete gallery', gallery_path(@gallery), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-mini' %>
+    <%= link_to 'Back', user_galleries_path, :class => 'btn btn-mini'  %>
+    <%= link_to 'Edit gallery', edit_user_gallery_path(current_user.id,@gallery), :class => 'btn btn-mini' %>
+    <%= link_to 'Delete gallery', user_gallery_path(current_user.id,@gallery), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-mini' %>
   </div>
 
 <h2>Pictures</h2>
@@ -31,10 +31,10 @@
       <%= image_tag pic.image.url %>
       <div class="caption">
         <p style="text-align: center;">
-        <%= link_to "Edit picture", picture_path(pic) %>
+        <%= link_to "Edit picture", user_picture_path(@user.id,pic) %>
 
         <%=
-          link_to "Delete picture", pic,
+          link_to "Delete picture", user_picture_path(@user.id,pic),
             :data => { :confirm => "Are you sure?" },
             :method => :delete
           %>

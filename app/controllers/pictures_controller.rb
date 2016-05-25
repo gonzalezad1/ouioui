@@ -1,6 +1,8 @@
 class PicturesController < ApplicationController
   # GET /pictures
   # GET /pictures.json
+  before_action :userid
+
   def index
 
     @gallery = Gallery.find(params[:gallery_id])
@@ -68,14 +70,11 @@ class PicturesController < ApplicationController
   # PUT /pictures/1
   # PUT /pictures/1.json
   def update
-
-    @gallery = Gallery.find(params[:gallery_id])
-
-    @picture = @gallery.pictures.find(params[:id])
+    @picture = Picture.find(params[:id])
 
     respond_to do |format|
-      if @picture.update_attributes(picture_params)
-        format.html { redirect_to gallery_path(@gallery), notice: 'Picture was successfully updated.' }
+      if @picture.update(picture_params)
+        format.html { redirect_to user_gallery_path(current_user, @picture.gallery), notice: 'Picture was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -93,7 +92,7 @@ class PicturesController < ApplicationController
     @picture.destroy
 
     respond_to do |format|
-      format.html { redirect_to root_path }
+      format.html { redirect_to user_gallery_path(current_user, @picture.gallery) }
       format.js
     end
   end
@@ -111,6 +110,10 @@ class PicturesController < ApplicationController
   end
 
   private
+
+  def userid 
+    @user = User.find(params[:user_id])
+  end
 
   def picture_params
     params.require(:picture).permit(:description, :gallery_id, :image)
