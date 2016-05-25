@@ -1,7 +1,7 @@
 <!-- Menu -->
 <nav class="menu" id="theMenu">
   <div class="menu-wrap">
-    <h1 class="logo"><a href="/">Project T</a></h1>
+    <h1 class="logo"><a href="/">TRAIL</a></h1>
     <i class="icon-remove menu-close"></i>
     <!-- <a href="#home">FIND</a> -->
     <% if(!user_signed_in?) %>
@@ -14,15 +14,18 @@
     <%= link_to "Messages", conversations_path %>
     <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
     <% end %>
+
     <li class="divider"></li>
-    <a href="#portfolio">Store</a>
-    <a href="#about">About Us</a>
+    <a href="/products">Store</a>
+    <a href="/about_us">About Us</a>
+
     <a href="#contact">Contact</a>
     <a href="#contact"></a>
     <a href="#"><i class="icon-facebook"></i></a>
     <a href="#"><i class="icon-twitter"></i></a>
     <a href="#"><i class="icon-dribbble"></i></a>
     <a href="#"><i class="icon-envelope"></i></a>
+    <a href="#"><i class="fa fa-shopping-cart"></i></a>
   </div>
 
   <!-- Menu button -->

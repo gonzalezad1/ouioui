@@ -17,9 +17,12 @@ Rails.application.routes.draw do
   
   resources :products
   resources :product_photos
-  
+
+  get "/about_us" => "pages#about_us"
+
   resources :conversations, only: [:index, :create] do
     resources :messages, only: [:index, :create]
   end
+
 
 end
