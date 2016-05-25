@@ -6,7 +6,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
     devise :omniauthable, :omniauth_providers => [:facebook]
     validates :fullname, presence: true, length: {maximum: 50}
+    
     has_many :products
+    
+    has_many :galleries
+    has_many :photos
+
     has_attached_file :avatar, styles: { medium: "300x300>", thumb: "50x50#", profile: '200x200>' }, default_url: nil
     validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
