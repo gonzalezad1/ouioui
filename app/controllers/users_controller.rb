@@ -33,11 +33,9 @@ class UsersController < ApplicationController
     params.require(:user).permit(:avatar)
   end
 
-<<<<<<< HEAD
 
-=======
   def premium_params
     params.require(:user).permit(:code)
   end
->>>>>>> master
+
 end
