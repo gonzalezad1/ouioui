@@ -11,10 +11,10 @@ Rails.application.routes.draw do
               :edit => "profile"}
 
   resources :users, only: [:show] do
-    resources :galleries 
+    resources :galleries
     resources :pictures
   end
-  
+
   resources :products
   resources :product_photos
 

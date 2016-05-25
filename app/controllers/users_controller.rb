@@ -11,11 +11,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    if params[:id].nil?
-      @user = User.find_by(params[:search])
+    @user = User.find_by(code: params[:code])
+    if @user.nil?
+      redirect_to "/"
     else
-      @user = User.find(params[:id])
+      @user.error.full_messages
+      redirect_to @user
     end
+
   end
 
   def update

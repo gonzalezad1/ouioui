@@ -12,8 +12,8 @@
     <h1 class="title">TRAIL</h1>
 
     <%= form_tag("/search", method: "get") do %>
-      <%= label_tag(params[:id], "Search for:") %>
-      <%= text_field_tag :id %>
+      <%= label_tag(params[:code], "Search for:") %>
+      <%= text_field_tag :code %>
       <%= submit_tag("Search") %>
     <% end %>
 
