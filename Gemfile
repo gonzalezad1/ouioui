@@ -13,6 +13,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 gem 'figaro'
 gem 'devise'
+gem 'rmagick'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'omniauth-facebook'
 
 # Notifications
@@ -20,6 +22,10 @@ gem 'toastr-rails'
 gem 'jquery-turbolinks'
 
 gem 'paperclip'
+
+# Messaging
+gem 'private_pub'
+gem 'thin'
 
 group :development, :test do
   gem 'byebug'

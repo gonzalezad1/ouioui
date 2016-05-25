@@ -11,10 +11,14 @@
     <% else %>
     <a href="/users/<%=current_user.id%>"><%="#{current_user.fullname}"%></a>
     <%= link_to "Edit Profile", edit_user_registration_path %>
+    <%= link_to "Messages", conversations_path %>
     <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
     <% end %>
+
+    <li class="divider"></li>
     <a href="/products">Store</a>
     <a href="/about_us">About Us</a>
+
     <a href="#contact">Contact</a>
     <a href="#contact"></a>
     <a href="#"><i class="icon-facebook"></i></a>
