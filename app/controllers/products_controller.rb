@@ -3,7 +3,8 @@ class ProductsController < ApplicationController
 
 
   def index
-    @products = current_admin.products
+    @products = Product.all
+    @product_photos = ProductPhoto.all
   end
 
   def new

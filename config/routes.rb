@@ -13,10 +13,15 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :products
   resources :product_photos
-  resources :galleries 
+
+
+  get "/about_us" => "pages#about_us"
+
+  resources :galleries
   resources :pictures
   resources :conversations, only: [:index, :create] do
     resources :messages, only: [:index, :create]
   end
+
 
 end
