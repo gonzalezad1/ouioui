@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+
   def create
     @user = User.new( user_params )
 
@@ -11,8 +11,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    if params[:id].nil?
+      @user = User.find_by(params[:search])
+    else
+      @user = User.find(params[:id])
+    end
   end
+
+
 
   private
 
@@ -22,5 +28,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:avatar)
   end
+
 
 end

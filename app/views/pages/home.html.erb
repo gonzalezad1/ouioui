@@ -11,6 +11,13 @@
     </div>
     <h1 class="title">TRAIL</h1>
 
+    <%= form_tag("/search", method: "get") do %>
+      <%= label_tag(params[:id], "Search for:") %>
+      <%= text_field_tag :id %>
+      <%= submit_tag("Search") %>
+    <% end %>
+
+
 <!-- form to search specific user code -->
   <div class="search">
     <form action="/" method="post" id='code' class="front">
@@ -19,13 +26,9 @@
     </form>
   </div>
 
-  <!-- <div class="background_image" style="min-height:300px; min-width:300px;background-image: url('rose.png');"> -->
-  <!-- <div class="img_prepre">
-    <%= image_tag "rose.png", :class => "img_preview" %>
-  </div> -->
+
   <div class="background-wrap">
-      <!-- <image src='/assets/rose.png'>
-      </image> -->
+
   </div>
 
 

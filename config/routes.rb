@@ -23,5 +23,5 @@ Rails.application.routes.draw do
     resources :messages, only: [:index, :create]
   end
 
-
+  get 'search', to: 'users#show'
 end
