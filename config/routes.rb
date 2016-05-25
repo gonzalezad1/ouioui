@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   resources :products
   resources :product_photos
 
+  patch "/users/:user_id" => "users#update"
+
   get "/about_us" => "pages#about_us"
 
   resources :conversations, only: [:index, :create] do
