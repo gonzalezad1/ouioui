@@ -2,17 +2,19 @@
     position: absolute;
     background-color: #1E3E2B;
     min-width: 100%;
+    min-height: 100%;
     left: 0;
     // animation: 1s multicolor;
     // animation-iteration-count: infinite;
      -webkit-animation: pulse 40s infinite alternate;
 }
 @-webkit-keyframes pulse {
-      0% {background-color: #45CEEF;}
-     25% {background-color: #FFF5A5;}
-     50% {background-color: #FFD4DA;}
-     75% {background-color: #99D2E4;}
-     100% {background-color: #D8CAB4;}
+      0% {background-color: #E0482E;}
+     20% {background-color: #FBDC00;}
+     40% {background-color: #1ED0BF;}
+     60% {background-color: #58C3EC;}
+     80% {background-color: #474794;}
+     100% {background-color: #E64462;}
 }
 
 .center {
@@ -37,7 +39,7 @@ p.profile_user_description {
 }
 
 p.profile_icons_title {
-  color: aquamarine;
+  color: white;
   font-family: 'Special Elite', cursive;
 }
 
@@ -176,5 +178,5 @@ p.profile_user_code {
 }
 
 strong {
-    background-color: black;
+    background-color: rgba(44, 49, 49, 0.25);
 }
