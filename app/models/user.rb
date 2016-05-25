@@ -6,7 +6,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,:confirmable
     devise :omniauthable, :omniauth_providers => [:facebook]
     validates :fullname, presence: true, length: {maximum: 50}
+    validates :code, uniqueness: true 
+
     has_many :products
+    has_many :galleries
+    has_many :photos
 
     #devise :registerable, :confirmable
     before_create :confirmation_token
@@ -23,16 +27,10 @@ class User < ActiveRecord::Base
         user.avatar = auth.info.image # assuming the user model has an image
         end
     end
-    # def email_activate
-    #     self.email_confirmed = true
-    #     self.confirm_token = nil
-    #     save(:validate => false)
-    # end
-    # private
 
-    # def confirmation_token
-    #     if self.confirm_token.blank?
-    #         self.confirm_token= SecureRandom.urlsafe_based64.to_s
-    #     end
-    # end
+    def generate_code
+        self.code = (("A".."Z").to_a.sample(1) + (0..9).to_a.sample(4)).join
+    end
+    
+   
 end

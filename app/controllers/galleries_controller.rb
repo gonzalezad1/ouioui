@@ -1,6 +1,8 @@
 class GalleriesController < ApplicationController
   # GET /galleries
   # GET /galleries.json
+  before_action :userid
+
   def index
     @galleries = Gallery.all
 
@@ -53,7 +55,7 @@ class GalleriesController < ApplicationController
           }
         end
 
-        format.html { redirect_to @gallery, notice: 'Gallery was successfully created.' }
+        format.html { redirect_to [current_user,@gallery], notice: 'Gallery was successfully created.' }
         format.json { render json: @gallery, status: :created, location: @gallery }
       else
         format.html { render action: "new" }
@@ -75,7 +77,7 @@ class GalleriesController < ApplicationController
             @gallery.pictures.create(image: image)
           }
         end
-        format.html { redirect_to @gallery, notice: 'Gallery was successfully updated.' }
+        format.html { redirect_to [current_user,@gallery], notice: 'Gallery was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -91,12 +93,16 @@ class GalleriesController < ApplicationController
     @gallery.destroy
 
     respond_to do |format|
-      format.html { redirect_to galleries_url }
+      format.html { redirect_to user_galleries_url }
       format.json { head :no_content }
     end
   end
 
   private
+
+  def userid 
+    @user = User.find(params[:user_id])
+  end
 
   def gallery_params
     params.require(:gallery).permit(:description,
