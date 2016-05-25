@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   end
 
   resources :products do
-    resources :transactions, only [:create]
+    resources :transactions, only: [:create]
   end
 
 end
