@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
     validates :code, uniqueness: true 
 
     has_many :products
-    
     has_many :galleries
     has_many :photos
 
