@@ -12,6 +12,13 @@
 /db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
+<<<<<<< HEAD
+/log/*.log
+/tmp
+
+# Ignore ruby-version
+/.ruby-version
+=======
 /log/*
 !/log/.keep
 /tmp
@@ -23,3 +30,4 @@
 # Ignore application configuration
 /config/mgn_application.yml
 .DS_Store
+>>>>>>> 0478bb66c5aeed21944167d5aa1235cba3cbc3ed
