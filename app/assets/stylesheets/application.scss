@@ -1,0 +1,44 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "toastr";
+@import "font-awesome.min";
+@import "home";
+@import "store";
+@import "log_in";
+@import "sign_up";
+@import "about_us";
+@import "profile";
+@import "edit_profile";
+
+
+.avatar-small {
+  width: 28px;
+}
+.avatar-medium {
+  width: 48px;
+}
+.avatar-large {
+  width: 68px;
+}
+.avatar-full {
+  width: 100%
+}
+
+hr.nav_bar {
+    width: 90%;
+}
+
+.bkpic{
+  position: absolute;
+  background-image: url('photo2.jpg');
+  z-index:-5;
+  left:0%;
+  background-size:cover;
+  min-width: 100%;
+  min-height: 100%;
+
+}
+.img-responsive {
+  width: 100%;
+}
+

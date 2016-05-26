@@ -1,0 +1,29 @@
+.sign_up_div {
+    position: center;
+    width: 60%;
+    margin-left: 12%;
+    margin-top: 20%;
+}
+
+input#user_fullname {
+    background: rgba(69, 76, 73, 0.13);
+    border-style: solid;
+    border-color: rgba(240, 243, 240, 0.27);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 100;
+    width: 250px;
+}
+
+input#user_password_confirmation {
+    outline: none;
+    background: rgba(69, 76, 73, 0.13);
+    border-style: solid;
+    border-color: rgba(240, 243, 240, 0.27);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 100;
+    width: 250px;
+}

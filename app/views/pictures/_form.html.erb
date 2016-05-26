@@ -1,0 +1,19 @@
+<%= form_for [current_user,@gallery, @picture], :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :description, :class => 'text_field' %>
+    </div>
+  </div>
+  
+    <%= image_tag @picture.image.url(:large), :id => 'cropbox' %>
+
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary  btn-mini' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                user_gallery_path(current_user, @picture.gallery), :class => 'btn btn-mini' %>
+    <%= link_to 'Default', '', :class => 'btn btn-mini btn-success' , :id => 'make_default'%>
+
+  </div>
+<% end %>

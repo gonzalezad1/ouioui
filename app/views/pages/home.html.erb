@@ -1,0 +1,69 @@
+<div class="bkpic">
+<% if current_admin %>
+  <%= render 'admin/home' %>
+<% else %>
+
+
+
+    <br><br><br><br><br><br><br><br><br>
+
+    <div class="logo_pic">
+    </div>
+    <h1 class="title">TRAIL</h1>
+
+
+
+    <%= form_tag("/search", method: "get") do %>
+      <%= label_tag(params[:code], "Search for:") %>
+      <%= text_field_tag :code %>
+      <%= submit_tag("Search") %>
+    <% end %>
+
+
+<!-- form to search specific user code -->
+  <div class="search">
+    <form action="/" method="post" id='code' class="front">
+	     <input type ="text" name ="user_code" placeholder="CODE" id="changeinputbox">
+	      <input type="submit" value="TRAIL" id="submit_code" style="padding-bottom: 1px; padding-top: 1px;">
+    </form>
+  </div>
+
+
+
+  <div class="background-wrap">
+
+
+  </div>
+
+
+    <div class="ec animated fadeIn">
+      <div class="ellipses-container">
+        <div class="ellipses ellipses__outer--thin">
+          <div class="ellipses ellipses__orbit">
+          </div>
+        </div>
+        <div class="ellipses ellipses__outer--thick">
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- <a class="axbtn animated fadeIn" href="http://3oneseven.com/about/">Find out more</a> -->
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+	<!-- <script src="assets/js/classie.js"></script> -->
+   <!--  <script src="assets/js/bootstrap.min.js"></script> -->
+    <!-- <script src="assets/js/smoothscroll.js"></script> -->
+	<!-- <script src="/assets/javascript/main.js"></script> -->
+  <!-- <script type="text/javascript">sc_project=3231500; sc_invisible=1; sc_partition=35; sc_security="2ff72137";</script>
+  <script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script> -->
+
+  <% end %>
+</div>
+
+
+<script>
+</script

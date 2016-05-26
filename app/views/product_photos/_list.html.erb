@@ -1,0 +1,7 @@
+<% if @product_photos %>
+  <div class="row">
+    <% @product_photos.each do |photo| %>
+      <%= image_tag photo.image.url() %>
+    <% end %>
+  </div>
+<% end %>

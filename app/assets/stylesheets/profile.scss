@@ -1,0 +1,182 @@
+.profile_background {
+    position: absolute;
+    background-color: #1E3E2B;
+    min-width: 100%;
+    min-height: 100%;
+    left: 0;
+    // animation: 1s multicolor;
+    // animation-iteration-count: infinite;
+     -webkit-animation: pulse 40s infinite alternate;
+}
+@-webkit-keyframes pulse {
+      0% {background-color: #E0482E;}
+     20% {background-color: #FBDC00;}
+     40% {background-color: #1ED0BF;}
+     60% {background-color: #58C3EC;}
+     80% {background-color: #474794;}
+     100% {background-color: #E64462;}
+}
+
+.center {
+    align-content: center;
+    text-align: center;
+}
+.user-avatar-full {
+    width: 65%;
+    border-color: slategrey;
+    border: solid;
+    border-width: thick;
+    border-radius: 5000px;
+}
+
+h2.profile_user_fullname {
+    color: #F9F9F9;
+}
+
+p.profile_user_description {
+    color: #F9F9F9;
+    font-size: medium;
+}
+
+p.profile_icons_title {
+  color: white;
+  font-family: 'Special Elite', cursive;
+}
+
+p.profile_user_code {
+  font-family: 'Shadows Into Light', cursive;
+  color:white;
+}
+
+.user_profile_icon {
+    font-size: -webkit-xxx-large;
+    color: slategray;
+    animation-iteration-count: infinite;
+}
+
+// icons from awesomefonts
+.fa-facebook:hover {
+    color: #16629E;
+}
+
+.fa-github:hover{
+  color: black;
+}
+
+.fa-google-plus:hover{
+  color: #dd4b39
+}
+
+.fa-twitter:hover{
+  color:  #3EB5FB;
+}
+
+.fa-twitch:hover{
+  color: #8730D6;
+}
+
+.fa-rebel:hover{
+  color: black;
+}
+
+.fa-snapchat-ghost:hover{
+  color:#EAE400;
+}
+
+.fa-youtube:hover{
+  color: #bb0000
+}
+.fa-tripadvisor:hover{
+  color:#2A790A
+}
+.fa-linkedin:hover{
+  color:#007bb5
+}
+.fa-instagram:hover{
+  animation: 1s multicolor;
+  animation-iteration-count: infinite;
+}
+@keyframes multicolor {
+    0% {
+        color:  #405de6;
+    }
+    10% {
+       color: #5851db;
+    }
+    20% {
+        color: #833ab4;
+    }
+    30% {
+        color: #c13584;
+    }
+    40% {
+        color: #e1306c;
+    }
+    50% {
+        color: #fd1d1d;
+    }
+    60% {
+        color: #f56040;
+    }
+    70% {
+      color: #f77737;
+    }
+    80% {
+      color: #fcaf45;
+    }
+    90% {
+      color: #ffdc80;
+    }
+}
+
+@media (max-width: 768px) {
+  .user_profile_icon {
+    margin-left: 10%;
+  }
+  p.profile_icons_title {
+    margin-left: 10%;
+  }
+  h2.profile_user_fullname {
+      margin-left: 10%;
+  }
+  p.profile_user_description {
+      margin-left: 10%;
+  }
+  p.profile_user_code {
+      margin-left:10%;
+  }
+}
+
+
+@media (min-width: 769px) {
+  .user_profile_icon {
+    margin-left: 5%;
+  }
+  p.profile_icons_title {
+    margin-left: 5%;
+  }
+  h2.profile_user_fullname {
+      margin-left: 5%;
+  }
+  p.profile_user_description {
+      margin-left: 5%;
+  }
+  p.profile_user_code {
+      margin-left:  5%;
+  }
+}
+
+@media (min-width: 600px){
+.col-md-4 {
+    width: 33.33333333333333%;
+}
+}
+@media (min-width: 600px){
+ .col-md-4{
+    float: left;
+  }
+}
+
+strong {
+    background-color: rgba(44, 49, 49, 0.25);
+}
