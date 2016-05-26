@@ -15,8 +15,7 @@ class UsersController < ApplicationController
     if @user.nil?
       redirect_to "/"
     else
-      @user.error.full_messages
-      redirect_to @user
+      @user.errors.full_messages
     end
 
   end
