@@ -1,0 +1,32 @@
+<%= form_for([@product, @product.transactions.new]) do |f| %>
+
+  <div class="row">
+    <div class="col-md-6">
+      <input type="number" step="1" min="1" max="46" name="quantity" value="1" title="Qty" class="input-text qty text" size="4">
+      <%= f.submit "Buy Now", id: "btn_book", class: "btn btn-primary" %>
+    </div>
+  </div>
+
+  <%= f.hidden_field :product_id, value: @product.id %>
+  <%= f.hidden_field :price, value: @product.price %>
+  <%= f.hidden_field :total, id: 'transaction_total' %>
+
+  <h4><span id="message"></span></h4>
+  <div id="preview" style="display: none">
+    <table class="reservation-table">
+      <tbody>
+        <tr>
+          <td>Night(s)</td>
+          <td><span id="reservation_nights"></span></td>
+        </tr>
+        <tr>
+          <td>Total</td>
+          <td>$<span id="reservation_sum"></span></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+  </div>
+
+  <br>
+<% end %>

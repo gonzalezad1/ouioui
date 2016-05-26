@@ -6,11 +6,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
     devise :omniauthable, :omniauth_providers => [:facebook]
     validates :fullname, presence: true, length: {maximum: 50}
-    validates :code, uniqueness: true 
+    validates :code, uniqueness: true
 
     has_many :products
     has_many :galleries
     has_many :photos
+    has_many :transactions
 
     #devise :registerable, :confirmable
     before_create :confirmation_token
@@ -31,6 +32,6 @@ class User < ActiveRecord::Base
     def generate_code
         self.code = (("A".."Z").to_a.sample(1) + (0..9).to_a.sample(4)).join
     end
-    
-   
+
+
 end
